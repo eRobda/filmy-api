@@ -62,7 +62,6 @@ app.get('/getMovie', async (req, res) => {
 
 
         if (videoUrl) {
-            await WriteToDb(name, videoUrl);
             await page.goto(videoUrl, { waitUntil: 'domcontentloaded' });
             console.log("Video page loaded");
             await page.waitForSelector('video', { timeout: 20000 });
